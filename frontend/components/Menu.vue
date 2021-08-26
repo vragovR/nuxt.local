@@ -1,19 +1,19 @@
 <template>
   <div class="menu">
     <NuxtLink to="/">
-      Главная
+      _Главная
     </NuxtLink>
     <NuxtLink to="/about">
-      О компании
+      _О компании
     </NuxtLink>
     <NuxtLink to="/products/1">
-      Товар 1
+      _Товар 1
     </NuxtLink>
     <NuxtLink to="/products/2">
-      Товар 2
+      _Товар 2
     </NuxtLink>
     <NuxtLink to="/products">
-      404
+      _404
     </NuxtLink>
   </div>
 </template>

@@ -10,17 +10,21 @@ export default merge({
   buildDir: '.nuxt-backend',
 
   build: {
-    extend (config, { isClient }) {
-      //https://gist.github.com/rvanzon/6028e884f6735c41125fb2d140143102
-      config.output.chunkFilename = '[hash].js'
+    extend (config, { isDev }) {
+      if (!isDev) {
+        config.output.filename = '[hash].js'
+        config.output.chunkFilename = '[hash].js'
+        config.optimization.splitChunks.cacheGroups.default = false
+        config.optimization.runtimeChunk = false
 
-      config.plugins.push(
-        new webpack.optimize.LimitChunkCountPlugin({
-          maxChunks: 1
-        })
-      )
+        config.plugins.push(
+          new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 1
+          })
+        )
 
-      config.plugins.push(new LoaderPlugin())
+        config.plugins.push(new LoaderPlugin())
+      }
     },
     splitChunks: {
       layouts: false,

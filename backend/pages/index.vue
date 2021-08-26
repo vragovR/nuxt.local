@@ -6,9 +6,9 @@
     <br>
     <Menu />
 
-    <UiButton size="sm" type="primary">
-      Кнопка
-    </UiButton>
+    <UiText size="hero" >
+      Тест
+    </UiText>
   </div>
 </template>
 
@@ -20,3 +20,9 @@ export default {
   components: { Menu, Tutorial }
 }
 </script>
+
+<style lang="less">
+body {
+  background: #e7e3e3;
+}
+</style>
