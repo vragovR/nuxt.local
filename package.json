@@ -1,0 +1,39 @@
+{
+  "name": "nuxt.local",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:backend": "nuxt --config-file backend/nuxt.config.js -p=3100",
+    "dev:frontend": "nuxt --config-file frontend/nuxt.config.js -p=3200",
+    "dev": "concurrently \"yarn dev:backend\" \"yarn dev:frontend\"",
+    "build:backend": "nuxt build --config-file backend/nuxt.config.js",
+    "build:frontend": "nuxt build --config-file frontend/nuxt.config.js",
+    "build": "concurrently \"yarn build:backend\" \"yarn build:frontend\"",
+    "start:backend": "nuxt start --config-file backend/nuxt.config.js -p=3100",
+    "start:frontend": "nuxt start --config-file frontend/nuxt.config.js -p=3200",
+    "start": "concurrently \"yarn start:backend\" \"yarn start:frontend\"",
+    "generate:backend": "nuxt generate --config-file backend/nuxt.config.js",
+    "generate:frontend": "nuxt generate --config-file frontend/nuxt.config.js",
+    "generate": "concurrently \"yarn generate:backend\" \"yarn generate:frontend\"",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "yarn lint:js"
+  },
+  "dependencies": {
+    "core-js": "^3.15.1",
+    "lodash": "^4.17.21",
+    "nuxt": "^2.15.7",
+    "nuxt-svg-loader": "^1.2.0",
+    "vue-ui-kit": "git+https://gitlab.retailcrm.tech/ui-kit/core.git#master"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.14.7",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "concurrently": "^6.2.1",
+    "eslint": "^7.29.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.12.1",
+    "less": "^4.1.1",
+    "less-loader": "7.1.0"
+  }
+}
